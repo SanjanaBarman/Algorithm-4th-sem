@@ -36,10 +36,10 @@ void floydWarshall(int w[][10])
         for(j=1;j<=v;j++) 
         {
             D[i][j] = w[i][j];
-            if(w[i][j]==0&&w[i][j]==999)
-            P[i][j] = -1;
+            if(w[i][j]==0 || w[i][j]==999)
+                P[i][j] = -1;
             else
-            P[i][j]=i;
+                P[i][j]=i;
         }
     }
     for(k=1; k<=v; k++) 
@@ -106,10 +106,11 @@ Step 1 Shortest distance between all pair of nodes
 999     -1      997     0
 
 Predecessor Matrix for shortest path
-1       1       1       1
-2       2       1       2
-3       3       3       3
-4       4       1       4
+0       0       1       0
+2       0       1       0
+0       0       0       3
+0       4       1       0
+
 Step 2 Shortest distance between all pair of nodes
 0       999     -2      999
 4       0       2       999
@@ -117,10 +118,11 @@ Step 2 Shortest distance between all pair of nodes
 3       -1      1       0
 
 Predecessor Matrix for shortest path
-1       1       1       1
-2       2       1       2
-3       3       3       3
-2       4       1       4
+0       0       1       0
+2       0       1       0
+0       0       0       3
+2       4       1       0
+
 Step 3 Shortest distance between all pair of nodes
 0       997     -2      0
 4       0       2       4
@@ -128,10 +130,11 @@ Step 3 Shortest distance between all pair of nodes
 3       -1      1       0
 
 Predecessor Matrix for shortest path
-1       3       1       3
-2       2       1       3
-3       3       3       3
-2       4       1       4
+0       0       1       3
+2       0       1       3
+0       0       0       3
+2       4       1       0
+
 Step 4 Shortest distance between all pair of nodes
 0       -1      -2      0
 4       0       2       4
@@ -139,11 +142,10 @@ Step 4 Shortest distance between all pair of nodes
 3       -1      1       0
 
 Predecessor Matrix for shortest path
-1       4       1       3
-2       2       1       3
-2       4       3       3
-2       4       1       4
+0       4       1       3
+2       0       1       3
+2       4       0       3
+2       4       1       0
 
---------------------------------
-Process exited after 0.06974 seconds with return value 0
-Press any key to continue . . .---*/
+
+--------------------------------*/
