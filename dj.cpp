@@ -102,4 +102,19 @@ int main()
 	}
 	return 0;
 }
-
+/* 0     5   999     6   999   999
+     5     0     2     2   999   999
+   999     2     0     1     4     6
+     6     2     1     0     3   999
+   999   999     4     3     0     1
+   999   999     6   999     1     0
+  A  B
+ Path cost = 5
+  A  B  C
+ Path cost = 7
+  A  D
+ Path cost = 6
+  A  D  E
+ Path cost = 9
+  A  D  E  F
+ Path cost = 10*/
